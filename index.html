@@ -430,5 +430,17 @@ need to enable in style .navbar-fixed {	transition: all ease-out 0.5s;} -->
 </script> -->
 
 
+<!-- hide navbar menu when click on menu-item -->
+<script>
+	$(function () {
+		$(".navbar-collapse a").click(function() {
+			if (!$(this).hasClass("dropdown-toggle")) {
+				$(".navbar-collapse").collapse('hide');
+			}
+		});
+	});
+</script>
+
+
 </body>
 </html>

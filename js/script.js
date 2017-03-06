@@ -56,6 +56,14 @@ var documentScroll = $(this).scrollTop();
 });
 
 
+/*hide navbar menu when click on menu-item*/
+$(".navbar-collapse a").click(function() {
+	if (!$(this).hasClass("dropdown-toggle")) {
+		$(".navbar-collapse").collapse('hide');
+	}
+});
+
+
 /*Simple version of Show and hide fixed navbar when scroll
 need to enable in style .navbar-fixed {	transition: all ease-out 0.5s;}*/
 // $(function () {
