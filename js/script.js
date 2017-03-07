@@ -24,23 +24,30 @@ $('.scroll-up').on('click', function() {
 
 /*Scroll to block*/
 $('ul li a, .header-logo a').on('click', function () {
+
+	var topNavHeight = $('.navbar-custom').innerHeight();
+	var dropdownMenuHeight = $('#velox-navbar-collapse').innerHeight();
 	var elementClick = $(this).attr("href");
 	var destination = $(elementClick).offset().top;
+
 	if ($(elementClick).length != 0) {    // проверка существования элемента
-		$('html, body').animate({ scrollTop: destination }, 1000);
+		if ($('.navbar-custom').hasClass('default') && dropdownMenuHeight > 50){
+			$('html, body').animate({ scrollTop: destination - dropdownMenuHeight }, 1000);
+		} else {
+			$('html, body').animate({ scrollTop: destination }, 1000);
+		}
 	}
 	return false; 
 });
 
 
 /*Show and hide fixed navbar when scroll*/
-var headerHeight = $('.main-header').innerHeight();
-var topNavHeight = $('.navbar-custom').innerHeight();
-var topNav = $('.navbar-custom');
-
 $(document).on('scroll', function(){
 
-var documentScroll = $(this).scrollTop();
+	var headerHeight = $('.main-header').innerHeight();
+	var topNavHeight = $('.navbar-custom').innerHeight();
+	var topNav = $('.navbar-custom');
+	var documentScroll = $(this).scrollTop();
 
 	if (documentScroll >= headerHeight && topNav.hasClass('default')){
 		topNav.fadeOut(0, function(){
@@ -57,10 +64,13 @@ var documentScroll = $(this).scrollTop();
 
 
 /*hide navbar menu when click on menu-item*/
-$(".navbar-collapse a").click(function() {
-	if (!$(this).hasClass("dropdown-toggle")) {
-		$(".navbar-collapse").collapse('hide');
-	}
+$(function () {
+	$(".navbar-collapse a").click(function() {
+		if (!$(this).hasClass("dropdown-toggle")) {
+			$(".navbar-collapse").collapse('hide');
+		}
+	});
+	return false;
 });
 
 

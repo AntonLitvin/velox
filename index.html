@@ -370,10 +370,18 @@
 <script>
 	$(function () {
 		$('ul li a, .header-logo a').on('click', function () {
+
+			var topNavHeight = $('.navbar-custom').innerHeight();
+			var dropdownMenuHeight = $('#velox-navbar-collapse').innerHeight();
 			var elementClick = $(this).attr("href");
 			var destination = $(elementClick).offset().top;
+
 			if ($(elementClick).length != 0) {    // проверка существования элемента
-				$('html, body').animate({ scrollTop: destination }, 1000);
+				if ($('.navbar-custom').hasClass('default') && dropdownMenuHeight > 50){
+					$('html, body').animate({ scrollTop: destination - dropdownMenuHeight }, 1000);
+				} else {
+					$('html, body').animate({ scrollTop: destination }, 1000);
+				}
 			}
 			return false; 
 		});
@@ -384,13 +392,12 @@
 <!-- Show and hide fixed navbar when scroll -->
 <script>
 	$(function () {
-		var headerHeight = $('.main-header').innerHeight();
-		var topNavHeight = $('.navbar-custom').innerHeight();
-		var topNav = $('.navbar-custom');
-
 		$(document).on('scroll', function(){
 
-		var documentScroll = $(this).scrollTop();
+			var headerHeight = $('.main-header').innerHeight();
+			var topNavHeight = $('.navbar-custom').innerHeight();
+			var topNav = $('.navbar-custom');
+			var documentScroll = $(this).scrollTop();
 
 			if (documentScroll >= headerHeight && topNav.hasClass('default')){
 				topNav.fadeOut(0, function(){
@@ -406,6 +413,20 @@
 		});
 	});
 </script>
+
+
+<!-- hide navbar menu when click on menu-item -->
+<script>
+	$(function () {
+		$(".navbar-collapse a").click(function() {
+			if (!$(this).hasClass("dropdown-toggle")) {
+				$(".navbar-collapse").collapse('hide');
+			}
+		});
+		return false;
+	});
+</script>
+
 
 <!-- Simple version of Show and hide fixed navbar when scroll
 need to enable in style .navbar-fixed {	transition: all ease-out 0.5s;} -->
@@ -428,18 +449,6 @@ need to enable in style .navbar-fixed {	transition: all ease-out 0.5s;} -->
 		});
 	});
 </script> -->
-
-
-<!-- hide navbar menu when click on menu-item -->
-<script>
-	$(function () {
-		$(".navbar-collapse a").click(function() {
-			if (!$(this).hasClass("dropdown-toggle")) {
-				$(".navbar-collapse").collapse('hide');
-			}
-		});
-	});
-</script>
 
 
 </body>
