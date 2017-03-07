@@ -65,9 +65,9 @@ $(document).on('scroll', function(){
 
 /*hide navbar menu when click on menu-item*/
 $(function () {
-	$(".navbar-collapse a").click(function() {
-		if (!$(this).hasClass("dropdown-toggle")) {
-			$(".navbar-collapse").collapse('hide');
+	$('.navbar-collapse a, .header-logo a').click(function() {
+		if (!$(this).hasClass('dropdown-toggle')) {
+			$('.navbar-collapse').collapse('hide');
 		}
 	});
 	return false;
