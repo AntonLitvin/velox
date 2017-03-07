@@ -23,7 +23,7 @@ $('.scroll-up').on('click', function() {
 
 
 /*Scroll to block*/
-$('ul li a, .header-logo a').on('click', function () {
+$('#velox-navbar-collapse a, #js-bottom-nav a, .header-logo a').on('click', function () {
 
 	var topNavHeight = $('.navbar-custom').innerHeight();
 	var dropdownMenuHeight = $('#velox-navbar-collapse').innerHeight();
@@ -52,12 +52,12 @@ $(document).on('scroll', function(){
 	if (documentScroll >= headerHeight && topNav.hasClass('default')){
 		topNav.fadeOut(0, function(){
 			$(this).removeClass("default").addClass('navbar-fixed').fadeIn(500);
-			$('#home').css('padding-top', topNavHeight);
+			$('#js-home').css('padding-top', topNavHeight);
 		});
 	} else if (documentScroll < headerHeight && topNav.hasClass('navbar-fixed')) {
 		topNav.fadeOut(300, function(){
 			$(this).removeClass('navbar-fixed').addClass('default').fadeIn(300);
-			$('#home').removeAttr('style');
+			$('#js-home').removeAttr('style');
 		});
 	}
 });

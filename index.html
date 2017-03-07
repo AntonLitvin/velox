@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<header class="header-bg" id="home">
+<header class="header-bg" id="js-home">
 <div class="container main-header">
 <div class="row">
 
@@ -28,7 +28,7 @@
 
 			<div class="navbar-header">
 				<div class="header-logo">
-					<a href="#home">
+					<a href="#js-home">
 						<img src="img/logo.png" alt="Velox-logo" width="130" height="38">
 					</a>
 				</div>
@@ -43,11 +43,11 @@
 
 			<div class="collapse navbar-collapse" id="velox-navbar-collapse">
 				<ul class="main-nav nav navbar-nav"> <!-- nav-pills -->
-					<li><a href="#services">Servises</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#brands">Brands</a></li>
-					<li class="testimonials"><a href="#comments"">Testimonials</a></li>
-					<li><a href="#contacts">Contact</a></li>
+					<li><a href="#js-services">Servises</a></li>
+					<li><a href="#js-portfolio">Portfolio</a></li>
+					<li><a href="#js-brands">Brands</a></li>
+					<li class="testimonials"><a href="#js-testimonials"">Testimonials</a></li>
+					<li><a href="#js-contacts">Contact</a></li>
 				</ul>
 			</div>
 
@@ -64,7 +64,7 @@
 </header> <!-- ./header-bg -->
 
 
-<section id="services">
+<section id="js-services">
 <div class="container our-services">
 <div class="row">
 
@@ -100,7 +100,7 @@
 </section>
 
 
-<section class="portfolio-bg" id="portfolio">
+<section class="portfolio-bg" id="js-portfolio">
 <div class="container portfolio">
 <div class="row">
 
@@ -183,7 +183,7 @@
 </section> <!-- ./portfolio-bg -->
 
 
-<section class="brands-bg" id="brands">
+<section class="brands-bg" id="js-brands">
 <div class="container brands">
 <div class="row">
 
@@ -201,7 +201,7 @@
 </section> <!-- ./brands-bg -->
 
 
-<section class="comments-bg" id="comments">
+<section class="comments-bg" id="js-testimonials">
 <div class="container comments">
 <div class="row">
 
@@ -257,19 +257,19 @@
 </div> <!-- ./container comments -->
 </section> <!-- ./comments-bg -->
 
-<section class="contact-us-bg" id="contacts">
+<section class="contact-us-bg" id="js-contacts">
 <div class="container contact-us">
 
 <div class="row">
 <div class="contact-us-header clearfix">
 	<h3 class="pull-left">Contact Us</h3>
 
-	<ul class="bottom-nav list-inline pull-right">
-		<li><a href="#home">Home</a></li>
-		<li><a href="#services">Services</a></li>
-		<li><a href="#portfolio">Portfolio</a></li>
-		<li><a href="#brands">Brands</a></li>
-		<li class="testimonials"><a href="#comments">About Us</a></li>
+	<ul class="bottom-nav list-inline pull-right" id="js-bottom-nav">
+		<li><a href="#js-home">Home</a></li>
+		<li><a href="#js-services">Services</a></li>
+		<li><a href="#js-portfolio">Portfolio</a></li>
+		<li><a href="#js-brands">Brands</a></li>
+		<li class="testimonials"><a href="#js-testimonials">About Us</a></li>
 	</ul>
 </div>
 </div>
@@ -369,7 +369,7 @@
 <!-- Scroll to block -->
 <script>
 	$(function () {
-		$('ul li a, .header-logo a').on('click', function () {
+		$('#velox-navbar-collapse a, #js-bottom-nav a, .header-logo a').on('click', function () {
 
 			var topNavHeight = $('.navbar-custom').innerHeight();
 			var dropdownMenuHeight = $('#velox-navbar-collapse').innerHeight();
@@ -402,12 +402,12 @@
 			if (documentScroll >= headerHeight && topNav.hasClass('default')){
 				topNav.fadeOut(0, function(){
 					$(this).removeClass("default").addClass('navbar-fixed').fadeIn(500);
-					$('#home').css('padding-top', topNavHeight);
+					$('#js-home').css('padding-top', topNavHeight);
 				});
 			} else if (documentScroll < headerHeight && topNav.hasClass('navbar-fixed')) {
 				topNav.fadeOut(300, function(){
 					$(this).removeClass('navbar-fixed').addClass('default').fadeIn(300);
-					$('#home').removeAttr('style');
+					$('#js-home').removeAttr('style');
 				});
 			}
 		});
