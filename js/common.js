@@ -2,7 +2,7 @@ $(function () {
 
 /*Carousel slider*/
 $('.carousel').carousel({
-	interval: 5000,
+	interval: 8000,
 	pause: 'hover'
 });
 
@@ -73,26 +73,20 @@ $(function () {
 	return false;
 });
 
+$(".services-item").equalHeights();
 
-/*Simple version of Show and hide fixed navbar when scroll
-need to enable in style .navbar-fixed {	transition: all ease-out 0.5s;}*/
-// $(function () {
-// 	var headerHeight = $('.main-header').innerHeight();
-// 	var topNavHeight = $('.navbar-custom').height();
-
-// 	$(document).on('scroll', function(){
-
-// 		var documentScroll = $(this).scrollTop();
-
-// 		if (documentScroll > headerHeight) {
-// 			$('.navbar-custom').addClass('navbar-fixed');
-// 			$('#home').css('padding-top', topNavHeight);
-// 		} else {
-// 			$('.navbar-custom').removeClass('navbar-fixed');
-// 			$('#home').removeAttr('style');
-// 		}
-// 	});
-// });
+/*Animations*/
+$(window).load(function() {
+	$(".header-title").animated("fadeInDown", "fadeOut");
+	$("h2").animated("fadeInUp", "fadeOut");
+	$(".services-item:nth-child(1),.services-item:nth-child(2)").animated("fadeInLeft", "fadeOut");
+	$(".services-item:nth-child(3),.services-item:nth-child(4)").animated("fadeInRight", "fadeOut");
+	$(".portfolio-item").animated("slideInUp", "fadeOut");
+	$(".brand-item").animated("slideInRight", "fadeOut");
+	$(".contact-us h3").animated("fadeInLeft", "fadeOut");
+	$(".contact-us label").animated("fadeInRight", "fadeOut");
+	$(".bottom-nav").animated("fadeInDown", "fadeOut");
+});
 
 
 });

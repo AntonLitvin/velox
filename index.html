@@ -8,7 +8,9 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<link href="https://fonts.googleapis.com/css?family=Lora:700,400|Open+Sans:400,600" rel="stylesheet">
-	<link href="css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/animate/animate.css">
+
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,7 +48,7 @@
 					<li><a href="#js-services">Servises</a></li>
 					<li><a href="#js-portfolio">Portfolio</a></li>
 					<li><a href="#js-brands">Brands</a></li>
-					<li class="testimonials"><a href="#js-testimonials"">Testimonials</a></li>
+					<li class="testimonials"><a href="#js-testimonials">Testimonials</a></li>
 					<li><a href="#js-contacts">Contact</a></li>
 				</ul>
 			</div>
@@ -208,7 +210,7 @@
 	<h2>See what others are saying about us</h2>
 
 	<!-- SLIDER -->
-	<div id="comments-slider" class="carousel slide" data-ride="carousel">
+	<div id="comments-slider" class="carousel slide">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
 			<li data-target="#comments-slider" data-slide-to="0" class="active"></li>
@@ -280,7 +282,7 @@
 		<h3>Our Address</h3>
 		<p>House No,11132, Sector 31, Gurgaon 122001  India</p>
 		<h3>Call Us</h3>
-		<p>+ 91-9876543210 <br>+ 01262219018</p>
+		<p>+ 919876543210 <br>+ 01262219018</p>
 		<h3>Email Us</h3>
 		<p>contactus@email.com</p>
 	</div>
@@ -330,126 +332,13 @@
 </div>
 </footer>
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- <script src="js/script.js"></script> -->
+<script src="libs/bootstrap/bootstrap.min.js"></script>
+<script src="libs/waypoints/waypoints.min.js"></script>
+<script src="libs/animate/animate-css.js"></script>
+<script src="libs/equalHeight/jquery.equalheights.min.js"></script>
 
-
-<!-- Carousel slider -->
-<script>
-	$(function(){
-		$('.carousel').carousel({
-			interval: false,
-			pause: 'hover'
-		});
-	});
-</script>
-
-
-<!-- to-top button -->
-<script>
-	$(function() {
-		$(window).scroll(function() {
-			if($(this).scrollTop() > $(document).height() - 1000) {
-				$('.scroll-up').fadeIn();
-			} else {
-				$('.scroll-up').fadeOut();
-			}
-		});
-
-		$('.scroll-up').on('click', function() {
-			$('body, html').animate({ scrollTop:0 },800);
-			return false;
-		});
-	});
-</script>
-
-
-<!-- Scroll to block -->
-<script>
-	$(function () {
-		$('#velox-navbar-collapse a, #js-bottom-nav a, .header-logo a').on('click', function () {
-
-			var topNavHeight = $('.navbar-custom').innerHeight();
-			var dropdownMenuHeight = $('#velox-navbar-collapse').innerHeight();
-			var elementClick = $(this).attr("href");
-			var destination = $(elementClick).offset().top;
-
-			if ($(elementClick).length != 0) {    // проверка существования элемента
-				if ($('.navbar-custom').hasClass('default') && dropdownMenuHeight > 50){
-					$('html, body').animate({ scrollTop: destination - dropdownMenuHeight }, 1000);
-				} else {
-					$('html, body').animate({ scrollTop: destination }, 1000);
-				}
-			}
-			return false; 
-		});
-	});
-</script>
-
-
-<!-- Show and hide fixed navbar when scroll -->
-<script>
-	$(function () {
-		$(document).on('scroll', function(){
-
-			var headerHeight = $('.main-header').innerHeight();
-			var topNavHeight = $('.navbar-custom').innerHeight();
-			var topNav = $('.navbar-custom');
-			var documentScroll = $(this).scrollTop();
-
-			if (documentScroll >= headerHeight && topNav.hasClass('default')){
-				topNav.fadeOut(0, function(){
-					$(this).removeClass("default").addClass('navbar-fixed').fadeIn(500);
-					$('#js-home').css('padding-top', topNavHeight);
-				});
-			} else if (documentScroll < headerHeight && topNav.hasClass('navbar-fixed')) {
-				topNav.fadeOut(300, function(){
-					$(this).removeClass('navbar-fixed').addClass('default').fadeIn(300);
-					$('#js-home').removeAttr('style');
-				});
-			}
-		});
-	});
-</script>
-
-
-<!-- hide navbar menu when click on menu-item -->
-<script>
-	$(function () {
-		$('.navbar-collapse a, .header-logo a').click(function() {
-			if (!$(this).hasClass('dropdown-toggle')) {
-				$('.navbar-collapse').collapse('hide');
-			}
-		});
-		return false;
-	});
-</script>
-
-
-<!-- Simple version of Show and hide fixed navbar when scroll
-need to enable in style .navbar-fixed {	transition: all ease-out 0.5s;} -->
-<!-- <script>
-	$(function () {
-		var headerHeight = $('.main-header').innerHeight();
-		var topNavHeight = $('.navbar-custom').height();
-
-		$(document).on('scroll', function(){
-
-			var documentScroll = $(this).scrollTop();
-
-			if (documentScroll > headerHeight) {
-				$('.navbar-custom').addClass('navbar-fixed');
-				$('#home').css('padding-top', topNavHeight);
-			} else {
-				$('.navbar-custom').removeClass('navbar-fixed');
-				$('#home').removeAttr('style');
-			}
-		});
-	});
-</script> -->
-
+<script src="js/common.js"></script>
 
 </body>
 </html>
