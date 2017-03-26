@@ -75,7 +75,15 @@ $(function () {
 
 
 /*equal height*/
-// $(".services-item").equalHeights();
+$(".portfolio-item-inner").equalHeights();
+
+
+	//Попап менеджер FancyBox
+	//Документация: http://fancybox.net/howto
+	//<a class="fancybox"><img src="image.jpg"></a>
+	//<a class="fancybox" data-fancybox-group="group"><img src="image.jpg"></a>
+	$(".fancybox").fancybox();
+
 
 /*Animations*/
 $(window).load(function() {
