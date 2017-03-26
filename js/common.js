@@ -73,7 +73,9 @@ $(function () {
 	return false;
 });
 
-$(".services-item").equalHeights();
+
+/*equal height*/
+// $(".services-item").equalHeights();
 
 /*Animations*/
 $(window).load(function() {
@@ -81,11 +83,11 @@ $(window).load(function() {
 	$("h2").animated("fadeInUp", "fadeOut");
 	$(".services-item:nth-child(1),.services-item:nth-child(2)").animated("fadeInLeft", "fadeOut");
 	$(".services-item:nth-child(3),.services-item:nth-child(4)").animated("fadeInRight", "fadeOut");
-	$(".portfolio-item").animated("slideInUp", "fadeOut");
-	$(".brand-item").animated("slideInRight", "fadeOut");
-	$(".contact-us h3").animated("fadeInLeft", "fadeOut");
-	$(".contact-us label").animated("fadeInRight", "fadeOut");
-	$(".bottom-nav").animated("fadeInDown", "fadeOut");
+	$(".portfolio-item").animated("fadeIn", "fadeOut");
+	$(".brand-item").animated("fadeInRight", "fadeOut");
+	$(".contact-us h3").animated("fadeInUp", "fadeOut");
+	$(".contact-us label").animated("fadeInUp", "fadeOut");
+	$(".bottom-nav").animated("fadeInUp", "fadeOut");
 });
 
 
