@@ -548,10 +548,6 @@ button {
   color: #fff !important;
 }
 
-.main-nav li:first-child a {
-  margin-left: 0;
-}
-
 .header-title {
   text-align: center;
 }
