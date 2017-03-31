@@ -476,7 +476,7 @@ a:hover, a:active, a:visited, a:focus {
 
 button {
   border: none;
-  outline: none;
+  outline: none !important;
 }
 
 .main-nav, .portfolio-nav {
@@ -983,14 +983,15 @@ button {
   height: 68px;
   border-radius: 50%;
   background: #00a5ff;
+  opacity: 0.5;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
   z-index: 15;
 }
 .main-footer .scroll-up:hover {
-  background: #1aaeff;
+  opacity: 0.9;
 }
 .main-footer .scroll-up:active {
-  background: #00a5ff;
+  opacity: 1;
 }
 .main-footer .scroll-up::before {
   content: "";
@@ -1040,6 +1041,25 @@ button {
 }
 .social a:hover {
   opacity: 1;
+}
+
+/*========== Modal ==========*/
+.velox-modal .modal-dialog {
+  max-width: 300px;
+}
+.velox-modal .close-btn {
+  border-radius: 30px;
+  border-color: #00a5ff;
+  outline: none;
+}
+.velox-modal .save-start-btn {
+  border-radius: 30px;
+  color: #fff;
+  background-color: #00a5ff;
+  outline: none;
+}
+.velox-modal .save-start-btn:hover {
+  background-color: #33b7ff;
 }
 
 /*========== MEDIA ==========*/

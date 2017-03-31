@@ -59,7 +59,7 @@
 	<div class="header-title">
 		<h1>Velox One Page Template</h1>
 		<p>Clean, Responsive, customizable one page template</p>
-		<a href="#1" class="main-btn-blue">Get Started Now</a>
+		<a href="#1" class="main-btn-blue" data-toggle="modal" data-target="#myModal">Get Started Now</a>
 	</div>
 
 </div> <!-- ./row -->
@@ -208,7 +208,7 @@
 	</div> <!-- ./portfolio-items container -->
 
 	<div class="portfolio-btn">
-		<a href="#1" class="main-btn-blue">Show More</a>
+		<a href="img/pure-vodka.jpg" class="main-btn-blue fancybox" data-fancybox-group="group2">Show More</a>
 	</div>
 
 </div> <!-- ./row -->
@@ -319,17 +319,17 @@
 	</div>
 
 	<div class="col-lg-8 col-md-8 col-sm-8 message-side">
-		<form action="#1">
+		<form action="https://formspree.io/anton8383@mail.ru" method="POST">
 			<div class="row">
 
 				<div class="col-lg-6 col-md-6 name-field">
 					<p><label for="name-field">Name :</label></p>
-					<p><input type="text" placeholder="Your name" id="name-field"></p>
+					<p><input type="text" placeholder="Your name" id="name-field" name="name"></p>
 				</div>
 
 				<div class="col-lg-6 col-md-6 subject-field">
 					<p><label for="subject-field">Subject :</label></p>
-					<p><input type="text" placeholder="Subject" id="subject-field"></p>
+					<p><input type="text" placeholder="Subject" id="subject-field" name="subject"></p>
 				</div>
 
 				<div class="col-lg-12 col-md-12 message-field">
@@ -362,6 +362,32 @@
 	</div>
 </div>
 </footer>
+
+<!-- Modal -->
+<div class="modal fade velox-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<form class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title" id="myModalLabel">Get Started now</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label class="control-label" for="name-field">Enter Your Name</label>
+					<input type="text" class="form-control" id="name-field">
+				</div>
+				<div class="form-group">
+					<label for="inputEmail" control-label">Email</label>
+					<input type="text" class="form-control" id="inputEmail" placeholder="Email">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default close-btn" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn save-start-btn">Save and start</button>
+			</div>
+		</form>
+	</div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="libs/bootstrap/bootstrap.min.js"></script>

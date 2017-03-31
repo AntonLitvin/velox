@@ -84,6 +84,8 @@ $(".portfolio-item-inner").equalHeights();
 	//<a class="fancybox" data-fancybox-group="group"><img src="image.jpg"></a>
 	$(".fancybox").fancybox();
 
+});
+
 
 /*Animations*/
 $(window).load(function() {
@@ -96,7 +98,4 @@ $(window).load(function() {
 	$(".contact-us h3").animated("fadeInUp", "fadeOut");
 	$(".contact-us label").animated("fadeInUp", "fadeOut");
 	$(".bottom-nav").animated("fadeInUp", "fadeOut");
-});
-
-
 });
