@@ -75,7 +75,7 @@ $(function () {
 
 
 /*equal height*/
-$(".portfolio-item-inner").equalHeights();
+// $(".portfolio-item-inner").equalHeights();
 
 
 	//Попап менеджер FancyBox
