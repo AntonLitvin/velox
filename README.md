@@ -1,5 +1,5 @@
 # velox
 
-Animated page, adaptive, some bootstrap, jQuery, SCSS
+[DEMO](https://antonlitvin.github.io/velox/)
 
-Demo: https://antonlitvin.github.io/velox/
+Training responsive page, animated, some bootstrap, jQuery, SCSS
